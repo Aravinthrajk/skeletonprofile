@@ -19,10 +19,12 @@ import { grey } from "@mui/material/colors";
 
 const TimeLine = () => {
   return (
-    <Container>
-      <Typography variant='h4'> ProfilePage - components/profilePage/timeline.js</Typography>
+    <Container maxWidth={'xl'}>
+      <Typography variant="h4">
+        ProfilePage - components/profilePage/timeline.js
+      </Typography>
       <Grid container>
-        <Grid item xs={"4"} elevation={2}>
+        <Grid item xs={4}>
           <List>
             <ListItem>
               <ListItemAvatar>
@@ -53,35 +55,27 @@ const TimeLine = () => {
             </ListItem>
           </List>
         </Grid>
-        <Grid item xs={"8"} justifyContent={"flex-end"}>
+        <Grid item xs={8} sx={{ justifyContent: "flex-end" }}>
           <List>
             <ListItem>
               <ListItemText
                 primary={
                   <Stack
-                    direction="row"
-                    justifyContent={"flex-end"}
-                    vertical={"bottom"}
-                    spacing={2}
-                    p={2}
-                  >
-                    <Skeleton
-                      variant="text"
-                      width={70}
-                      height={32}
-                      sx={{ fontSize: "1rem" }}
-                    ></Skeleton>
-                    <Skeleton
-                      variant="text"
-                      width={70}
-                      sx={{ fontSize: "1rem" }}
-                    ></Skeleton>
-                    <Skeleton
-                      variant="text"
-                      width={70}
-                      sx={{ fontSize: "1rem" }}
-                    ></Skeleton>
-                  </Stack>
+                  direction="row"
+                  sx={{ justifyContent: "flex-end",p:2 }}
+                  vertical={"bottom"}
+                  spacing={2}
+                 
+                >
+                  {Array.from({ length: 3 }).map((_, index) => (
+                    <Typography key={index}>
+                      <Skeleton
+                        variant="text"
+                        sx={{ width: 70, fontSize: "1.2rem" }}
+                      ></Skeleton>
+                    </Typography>
+                  ))}
+                </Stack>
                 }
               ></ListItemText>
             </ListItem>
@@ -93,13 +87,14 @@ const TimeLine = () => {
             <List>
               <ListItem>
                 {Array.from({ length: 7 }).map((_, index) => (
-                  <ListItemText>
-                    <Skeleton
-                      direction="row"
-                      width={60}
-                      spacing={1}
-                      sx={{ fontSize: "1rem" }}
-                    ></Skeleton>
+                  <ListItemText key={index}>
+                    <Stack direction="row"  spacing={1}>
+                      <Skeleton
+                        width={60}
+                       
+                        sx={{ fontSize: "1rem" }}
+                      ></Skeleton>
+                    </Stack>
                   </ListItemText>
                 ))}
               </ListItem>
@@ -108,34 +103,32 @@ const TimeLine = () => {
           <Divider />
         </Grid>
 
-
         <Grid container>
           <Grid item xs={5} paddingtop={2}>
             <Stack direction="column" sx={{ p: 2 }} spacing={5}>
               <Paper sx={{ p: 2 }} elevation={2}>
-                <Typography>
-                  {" "}
-                  <Skeleton variant="h4" width={120}></Skeleton>
+                <Typography variant="h4" >
+                
+                  <Skeleton width={120}></Skeleton>
                 </Typography>
 
-                <Divider sx={{ p: 2 }} />
-
-                <Typography paddingTop={5}>
+                <Divider sx={{ p: 1 }} />
+                <Typography  sx={{ pt: 2 }} >
                   <Skeleton variant="text" width={120}></Skeleton>
                 </Typography>
               </Paper>
 
-              <Paper sx={{ p: 2 }} paddingTop={5} elevation={2}>
-                <Typography>
-                  <Skeleton variant="h4" width={100}></Skeleton>
+              <Paper sx={{ p: 2 ,pt:5}}  elevation={2}>
+                <Typography variant="h4">
+                  <Skeleton  width={100}></Skeleton>
                 </Typography>
 
-                <Divider sx={{ p: 2 }} />
+                <Divider sx={{ p: 1 }} />
 
-                <Typography paddingTop={5}>
+                <Typography sx={{ pt:2}}>
                   <Skeleton variant="text" width={100}></Skeleton>
                 </Typography>
-                <Typography paddingTop={2}>
+                <Typography sx={{ pt:2}}>
                   <Skeleton variant="text" width={100}></Skeleton>
                 </Typography>
               </Paper>
@@ -168,29 +161,25 @@ const TimeLine = () => {
                   </Box>
                 </Stack>
                 <Grid container>
-                <Grid item xs={10}>
-                <Stack
-                  direction="row"
-                  
-                  spacing={2}
-                  m={2}
-                  paddingLeft={5}
-                >
-                  {Array.from({ length: 4 }).map((_, index) => (
-                    <Avatar>
-                      <Skeleton variant="circular"></Skeleton>
-                    </Avatar>
-                  ))}</Stack></Grid>
+                  <Grid item xs={10}>
+                    <Stack direction="row" spacing={2} sx={{m:2,pl:5}}>
+                      {Array.from({ length: 4 }).map((_, index) => (
+                        <Avatar key={index}>
+                          <Skeleton variant="circular"></Skeleton>
+                        </Avatar>
+                      ))}
+                    </Stack>
+                  </Grid>
                   <Grid item xs={2} paddingTop={2}>
-                  <Button  >
-                    <Skeleton
-                      variant="rectangular"
-                      width={80}
-                      
-                      justifyContent={"flex-end"}
-                    ></Skeleton>
-                  </Button>
-                  </Grid></Grid>
+                    <Button>
+                      <Skeleton
+                        variant="rectangular"
+                        width={80}
+                        sx={{justifyContent:'flex-end'}}
+                      ></Skeleton>
+                    </Button>
+                  </Grid>
+                </Grid>
               </Paper>
 
               <Paper sx={{ p: 2 }} elevation={2}>
@@ -200,8 +189,8 @@ const TimeLine = () => {
                   </Avatar>
                   <Stack
                     direction="column"
-                    flexGrow={4}
                     spacing={2}
+                    sx={{m:2,pl:5}}
                     m={2}
                     paddingLeft={5}
                   >
@@ -222,19 +211,21 @@ const TimeLine = () => {
                   </Stack>
                 </Stack>
                 <Grid container>
-                    <Grid item xs={11}>
-                <Stack direction={"row"} p={2}>
-                  <Typography paddingTop={2}>
-                    <Skeleton
-                      variant="rectangular"
-                      width={300}
-                      sx={{ fontSize: "1rem" }}
-                    ></Skeleton>
-                  </Typography></Stack></Grid>
-                  <Grid item xs={1} justifyContent={"flex-end"}  paddingTop={2}>
-                  <Avatar >
-                    <Skeleton variant="circular"></Skeleton>
-                  </Avatar>
+                  <Grid item xs={11}>
+                    <Stack direction={"row"} p={2}>
+                      <Typography paddingTop={2}>
+                        <Skeleton
+                          variant="rectangular"
+                          width={300}
+                          sx={{ fontSize: "1rem" }}
+                        ></Skeleton>
+                      </Typography>
+                    </Stack>
+                  </Grid>
+                  <Grid item xs={1} justifyContent={"flex-end"} paddingTop={2}>
+                    <Avatar>
+                      <Skeleton variant="circular"></Skeleton>
+                    </Avatar>
                   </Grid>
                 </Grid>
               </Paper>

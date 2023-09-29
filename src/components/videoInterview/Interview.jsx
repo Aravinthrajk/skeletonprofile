@@ -18,13 +18,12 @@ import {
 
 export default function Interview() {
   return (
-    <Container>
+    <Container maxWidth="xl">
       <Typography variant="h4">
-        {" "}
         VideoInterview- components/videoInterview/interview.jsx
       </Typography>
       <Grid container>
-        <Grid item xs={"4"} elevation={2}>
+        <Grid item xs={4}>
           <List>
             <ListItem>
               <ListItemAvatar>
@@ -35,34 +34,27 @@ export default function Interview() {
             </ListItem>
           </List>
         </Grid>
-        <Grid item xs={"8"} >
+        <Grid item xs={8}>
           <List>
             <ListItem>
               <ListItemText
                 primary={
+                  
                   <Stack
                     direction="row"
-                    justifyContent={"flex-end"}
+                    sx={{ justifyContent: "flex-end" }}
                     vertical={"bottom"}
                     spacing={2}
                     p={2}
                   >
-                    <Skeleton
-                      variant="text"
-                      width={70}
-                      height={32}
-                      sx={{ fontSize: "1rem" }}
-                    ></Skeleton>
-                    <Skeleton
-                      variant="text"
-                      width={70}
-                      sx={{ fontSize: "1rem" }}
-                    ></Skeleton>
-                    <Skeleton
-                      variant="text"
-                      width={70}
-                      sx={{ fontSize: "1rem" }}
-                    ></Skeleton>
+                    {Array.from({ length: 3 }).map((_, index) => (
+                      <Typography key={index}>
+                        <Skeleton
+                          variant="text"
+                          sx={{ width: 70, fontSize: "1.2rem" }}
+                        ></Skeleton>
+                      </Typography>
+                    ))}
                   </Stack>
                 }
               ></ListItemText>
@@ -75,7 +67,7 @@ export default function Interview() {
             <List>
               <ListItem>
                 {Array.from({ length: 7 }).map((_, index) => (
-                  <ListItemText>
+                  <ListItemText key={index}>
                     <Skeleton
                       direction="row"
                       width={60}
@@ -90,20 +82,23 @@ export default function Interview() {
           <Divider />
         </Grid>
 
-        <Grid xs={12} paddingTop={5}>
+        <Grid item xs={12} sx={{ mt: 5 }}>
           <Paper xs={12} elevation={2}>
             <Typography sx={{ padding: "30px 5px 5px 25px " }}>
               <Skeleton variant="h3" width={120}></Skeleton>
             </Typography>
             <Divider sx={{ p: 2 }} />
             <Grid item xs={12}>
-              <Box width={1000} height={700} sx={{ p: 6, pl: "20vh" }}>
+              <Box sx={{ p: 6, pl: "20vh", width: 1000, height: 700 }}>
                 <Skeleton
                   variant="rounded"
-                  borderRadius={4}
-                  sx={{borderRadius:'20px', p:2}}
-                  width={700}
-                  height={500}
+                  sx={{
+                    borderRadius: "20px",
+                    p: 2,
+                    width: 700,
+                    height: 500,
+                    borderRadius: 4,
+                  }}
                 />
               </Box>
             </Grid>
