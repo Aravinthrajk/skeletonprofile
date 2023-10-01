@@ -1,7 +1,6 @@
 import * as React from "react";
 import Skeleton from "@mui/material/Skeleton";
 import Stack from "@mui/material/Stack";
-import { grey } from "@mui/material/colors";
 import {
   Container,
   Paper,
@@ -16,7 +15,7 @@ import {
   ListItemText,
   Avatar,
 } from "@mui/material";
-import Link from "next/link";
+
 
 export default function AppliedJobs() {
   return (
@@ -67,6 +66,8 @@ export default function AppliedJobs() {
                     sx={{ justifyContent: "flex-end" }}
                     vertical={"bottom"}
                     spacing={2}
+                    useFlexGap
+                    flexWrap="wrap"
                     p={2}
                   >
                     {Array.from({ length: 3 }).map((_, index) => (
@@ -90,7 +91,14 @@ export default function AppliedJobs() {
               <ListItem>
                 {Array.from({ length: 7 }).map((_, index) => (
                   <ListItemText key={index}>
-                    <Skeleton width={60} sx={{ fontSize: "1rem" }}></Skeleton>
+                    <Stack direction="row"  useFlexGap
+                  flexWrap="wrap" spacing={2}>
+                      <Skeleton
+                        width={60}
+                       
+                        sx={{ fontSize: "1rem" }}
+                      ></Skeleton>
+                    </Stack>
                   </ListItemText>
                 ))}
               </ListItem>
@@ -126,7 +134,7 @@ export default function AppliedJobs() {
                   {Array.from({ length: 4 }).map((_, index) => (
                     <Paper
                       key={index}
-                      sx={{ p: 2, minWidth: "48%" }}
+                      sx={{ p: 2, minWidth: 690 }}
                       elevation={2}
                     >
                       <Typography variant="h4">

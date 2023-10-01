@@ -5,13 +5,33 @@ import TimeLine from "@/components/profilePage/timeLine";
 import AppliedJobs from "@/components/appliedJobs/appliedjobs";
 import { Typography } from "@mui/material";
 import Interview from "@/components/videoInterview/Interview";
+import { Apple } from "@mui/icons-material";
+import AppliedSearchJobs from "@/components/appliedSearchjobs/AppliedSearchJobs";
 
 export default function Home() {
-  return (
-    <>
-    <Interview/>
-    <AppliedJobs/>  
-    <TimeLine/>
+  var apply = 1;
+  if (apply>0) {
+    return(
+      <>
+      <AppliedSearchJobs/>
+      <AppliedJobs/>
+      <Interview/>
+      <TimeLine/>
       </>
-  )
+    )
+  
+   } else {
+    return(<AppliedSearchJobs/>)
+     
+   }
+  
+  // return (
+  //   <>
+    
+   
+  //   <Interview/>
+  //   <AppliedJobs/>  
+  //   <TimeLine/>
+  //     </>
+  // )
 }

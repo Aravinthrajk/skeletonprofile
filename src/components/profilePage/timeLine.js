@@ -104,7 +104,7 @@ const TimeLine = () => {
         </Grid>
 
         <Grid container>
-          <Grid item xs={5} paddingtop={2}>
+          <Grid item xs={5} sx={{ pt: 2 }}>
             <Stack direction="column" sx={{ p: 2 }} spacing={5}>
               <Paper sx={{ p: 2 }} elevation={2}>
                 <Typography variant="h4" >
@@ -116,20 +116,23 @@ const TimeLine = () => {
                 <Typography  sx={{ pt: 2 }} >
                   <Skeleton variant="text" width={120}></Skeleton>
                 </Typography>
+                <Typography  sx={{ pt: 2 }} >
+                  <Skeleton variant="text" width={120}></Skeleton>
+                </Typography>
               </Paper>
 
               <Paper sx={{ p: 2 ,pt:5}}  elevation={2}>
                 <Typography variant="h4">
-                  <Skeleton  width={100}></Skeleton>
+                  <Skeleton  width={120}></Skeleton>
                 </Typography>
 
                 <Divider sx={{ p: 1 }} />
 
-                <Typography sx={{ pt:2}}>
-                  <Skeleton variant="text" width={100}></Skeleton>
+                <Typography  mt={2}>
+                  <Skeleton variant="text" width={120}></Skeleton>
                 </Typography>
-                <Typography sx={{ pt:2}}>
-                  <Skeleton variant="text" width={100}></Skeleton>
+                <Typography  mt={2}>
+                  <Skeleton variant="text" width={120}></Skeleton>
                 </Typography>
               </Paper>
             </Stack>
