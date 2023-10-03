@@ -7,12 +7,14 @@ import { Typography } from "@mui/material";
 import Interview from "@/components/videoInterview/Interview";
 import { Apple } from "@mui/icons-material";
 import AppliedSearchJobs from "@/components/appliedSearchjobs/AppliedSearchJobs";
+import VideoInterviewpage from "@/components/videoInterviewPage/VideoInterviewpage";
 
 export default function Home() {
   var apply = 1;
   if (apply>0) {
     return(
       <>
+      <VideoInterviewpage/>
       <AppliedSearchJobs/>
       <AppliedJobs/>
       <Interview/>
