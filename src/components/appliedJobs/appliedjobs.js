@@ -18,6 +18,7 @@ import {
 
 
 export default function AppliedJobs() {
+  
   return (
     <Container maxWidth={'xl'}>
       <Typography variant="h4">
