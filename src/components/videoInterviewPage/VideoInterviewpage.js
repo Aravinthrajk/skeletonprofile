@@ -23,7 +23,7 @@ const VideoInterviewpage = () => {
                 variant="rectangular"
                 sx={{
                   pl: 10,
-                  width:280,
+                  width:"45%",
                   height: "100%",
                 }}
               />
@@ -32,16 +32,21 @@ const VideoInterviewpage = () => {
                   width: "100%",
                   flexDirection: "column",
                   display: "flex",
-
-                  alignItems: "center",
+                  ml:8,
+                  mr:8,
+                  alignItems: "left",
                 }}
               >
-                <Typography variant="h3">
-                  <Skeleton sx={{ width: 200 }}></Skeleton>
+                <Typography variant="h5">
+                  <Skeleton sx={{ width: "100%" }}></Skeleton>
                 </Typography>
-                <Typography variant="h5" sx={{pt:14}}>
-                  <Skeleton
-                    sx={{ width: 170,position:'static', bottom: "0px" }}
+                <Typography >
+                  <Skeleton variant="text" sx={{ width: "50%" }}></Skeleton>
+                </Typography>
+
+                <Typography  >
+                  <Skeleton variant="text" 
+                    sx={{  width: "45%",position:'static', bottom: "0px" }}
                   ></Skeleton>
                 </Typography>
               </Box>
